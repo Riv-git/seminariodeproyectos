@@ -1,0 +1,548 @@
+
+R version 4.2.3 (2023-03-15) -- "Shortstop Beagle"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.79 (8198) x86_64-apple-darwin17.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> X <- rnorm(100)
+> Y <- 2*X + rnorm(100)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> 
+> # Graficar modelo de regresión lineal
+> plot(modelo, 2)
+> 
+2023-04-14 13:13:54.733 R[3750:228456] +[NSSavePanel _warmUp] attempted warmup
+> library(car)
+Error in library(car) : there is no package called 'car'
+> data("iris")
+> iris <- filter(.data = iris, Species %in% c("versicolor", "virginica"))
+Error in filter(.data = iris, Species %in% c("versicolor", "virginica")) : 
+  unused argument (.data = iris)
+> leveneTest(y = iris$Petal.Length, group = iris$Species, center = "median")
+Error in leveneTest(y = iris$Petal.Length, group = iris$Species, center = "median") : 
+  could not find function "leveneTest"
+> install.packages("car")
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies 'diffobj', 'rematch2', 'fansi', 'pkgconfig', 'utf8', 'brio', 'praise', 'waldo', 'ellipsis', 'generics', 'tibble', 'tidyr', 'pillar', 'tidyselect', 'testthat', 'colorspace', 'broom', 'dplyr', 'numDeriv', 'SparseM', 'MatrixModels', 'minqa', 'nloptr', 'Rcpp', 'RcppEigen', 'farver', 'labeling', 'munsell', 'RColorBrewer', 'viridisLite', 'carData', 'abind', 'pbkrtest', 'quantreg', 'lme4', 'scales'
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/diffobj_0.3.5.tgz'
+Content type 'application/x-gzip' length 1004587 bytes (981 KB)
+==================================================
+downloaded 981 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/rematch2_2.1.2.tgz'
+Content type 'application/x-gzip' length 45040 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/fansi_1.0.4.tgz'
+Content type 'application/x-gzip' length 364195 bytes (355 KB)
+==================================================
+downloaded 355 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/pkgconfig_2.0.3.tgz'
+Content type 'application/x-gzip' length 17870 bytes (17 KB)
+==================================================
+downloaded 17 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/utf8_1.2.3.tgz'
+Content type 'application/x-gzip' length 196823 bytes (192 KB)
+==================================================
+downloaded 192 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/brio_1.1.3.tgz'
+Content type 'application/x-gzip' length 40561 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/praise_1.0.0.tgz'
+Content type 'application/x-gzip' length 16253 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/waldo_0.4.0.tgz'
+Content type 'application/x-gzip' length 100194 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/ellipsis_0.3.2.tgz'
+Content type 'application/x-gzip' length 36516 bytes (35 KB)
+==================================================
+downloaded 35 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/generics_0.1.3.tgz'
+Content type 'application/x-gzip' length 77771 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/tibble_3.2.1.tgz'
+Content type 'application/x-gzip' length 676165 bytes (660 KB)
+==================================================
+downloaded 660 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/tidyr_1.3.0.tgz'
+Content type 'application/x-gzip' length 1324272 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/pillar_1.9.0.tgz'
+Content type 'application/x-gzip' length 643056 bytes (627 KB)
+==================================================
+downloaded 627 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/tidyselect_1.2.0.tgz'
+Content type 'application/x-gzip' length 218996 bytes (213 KB)
+==================================================
+downloaded 213 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/testthat_3.1.7.tgz'
+Content type 'application/x-gzip' length 2999123 bytes (2.9 MB)
+==================================================
+downloaded 2.9 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/colorspace_2.1-0.tgz'
+Content type 'application/x-gzip' length 2621598 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/broom_1.0.4.tgz'
+Content type 'application/x-gzip' length 1856180 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/dplyr_1.1.1.tgz'
+Content type 'application/x-gzip' length 1557684 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/numDeriv_2016.8-1.1.tgz'
+Content type 'application/x-gzip' length 113250 bytes (110 KB)
+==================================================
+downloaded 110 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/SparseM_1.81.tgz'
+Content type 'application/x-gzip' length 1096206 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/MatrixModels_0.5-1.tgz'
+Content type 'application/x-gzip' length 435122 bytes (424 KB)
+==================================================
+downloaded 424 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/minqa_1.2.5.tgz'
+Content type 'application/x-gzip' length 349364 bytes (341 KB)
+==================================================
+downloaded 341 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/nloptr_2.0.3.tgz'
+Content type 'application/x-gzip' length 1949528 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/Rcpp_1.0.10.tgz'
+Content type 'application/x-gzip' length 3240791 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/RcppEigen_0.3.3.9.3.tgz'
+Content type 'application/x-gzip' length 4692990 bytes (4.5 MB)
+==================================================
+downloaded 4.5 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/farver_2.1.1.tgz'
+Content type 'application/x-gzip' length 1943238 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/labeling_0.4.2.tgz'
+Content type 'application/x-gzip' length 60389 bytes (58 KB)
+==================================================
+downloaded 58 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/munsell_0.5.0.tgz'
+Content type 'application/x-gzip' length 241895 bytes (236 KB)
+==================================================
+downloaded 236 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/RColorBrewer_1.1-3.tgz'
+Content type 'application/x-gzip' length 53152 bytes (51 KB)
+==================================================
+downloaded 51 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/viridisLite_0.4.1.tgz'
+Content type 'application/x-gzip' length 1297022 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/carData_3.0-5.tgz'
+Content type 'application/x-gzip' length 1819202 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/abind_1.4-5.tgz'
+Content type 'application/x-gzip' length 61674 bytes (60 KB)
+==================================================
+downloaded 60 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/pbkrtest_0.5.2.tgz'
+Content type 'application/x-gzip' length 186351 bytes (181 KB)
+==================================================
+downloaded 181 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/quantreg_5.95.tgz'
+Content type 'application/x-gzip' length 1649383 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/lme4_1.1-32.tgz'
+Content type 'application/x-gzip' length 7074475 bytes (6.7 MB)
+==================================================
+downloaded 6.7 MB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/scales_1.2.1.tgz'
+Content type 'application/x-gzip' length 608312 bytes (594 KB)
+==================================================
+downloaded 594 KB
+
+trying URL 'https://www.icesi.edu.co/CRAN/bin/macosx/contrib/4.2/car_3.1-2.tgz'
+Content type 'application/x-gzip' length 1706653 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/f6/t8wy3xbd6z37kltfhqdrj0080000gn/T//RtmpMxaMJ7/downloaded_packages
+> library(car)
+Loading required package: carData
+> data("iris")
+> iris <- filter(.data = iris, Species %in% c("versicolor", "virginica"))
+Error in filter(.data = iris, Species %in% c("versicolor", "virginica")) : 
+  unused argument (.data = iris)
+> leveneTest(y = iris$Petal.Length, group = iris$Species, center = "median")
+Levene's Test for Homogeneity of Variance (center = "median")
+       Df F value    Pr(>F)    
+group   2   19.48 3.129e-08 ***
+      147                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> # Cargar el paquete car
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> grupo1 <- rnorm(50, mean = 5, sd = 2)
+> grupo2 <- rnorm(50, mean = 5, sd = 3)
+> 
+> # Ejecutar el test de Levene
+> leveneTest(grupo1, grupo2)
+Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(>F)
+group 49     NaN    NaN
+       0               
+Warning message:
+In leveneTest.default(grupo1, grupo2) : grupo2 coerced to factor.
+> 
+> # Cargar el paquete car
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> grupo1 <- rnorm(49, mean = 5, sd = 2)
+> grupo2 <- rnorm(50, mean = 5, sd = 3)
+> 
+> # Ejecutar el test de Levene
+> leveneTest(grupo1, grupo2)
+Error in complete.cases(y, group) : 
+  not all arguments have the same length
+In addition: Warning message:
+In leveneTest.default(grupo1, grupo2) : grupo2 coerced to factor.
+> 
+> # Cargar el paquete car
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> grupo1 <- rnorm(50, mean = 6, sd = 2)
+> grupo2 <- rnorm(50, mean = 5, sd = 3)
+> 
+> # Ejecutar el test de Levene
+> leveneTest(grupo1, grupo2)
+Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(>F)
+group 49     NaN    NaN
+       0               
+Warning message:
+In leveneTest.default(grupo1, grupo2) : grupo2 coerced to factor.
+> # Cargar el paquete car
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> grupo1 <- rnorm(50, mean = 6, sd = 2)
+> grupo2 <- rnorm(50, mean = 5, sd = 3)
+> # Convertir grupo2 en un vector numérico
+> grupo2 <- as.numeric(as.character(grupo2))
+> 
+> # Ejecutar el test de Levene
+> leveneTest(grupo1, grupo2)
+Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(>F)
+group 49     NaN    NaN
+       0               
+Warning message:
+In leveneTest.default(grupo1, grupo2) : grupo2 coerced to factor.
+> # Cargar el paquete car
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> grupo1 <- rnorm(50, mean = 6, sd = 2)
+> grupo2 <- rnorm(50, mean = 5, sd = 3)
+> # Convertir grupo2 en un vector numérico
+> grupo2 <- as.numeric(as.character(grupo2))
+> # Eliminar valores faltantes
+> grupo1 <- na.omit(grupo1)
+> grupo2 <- na.omit(grupo2)
+> 
+> # Ejecutar el test de Levene
+> leveneTest(grupo1, grupo2)
+Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(>F)
+group 49     NaN    NaN
+       0               
+Warning message:
+In leveneTest.default(grupo1, grupo2) : grupo2 coerced to factor.
+> 
+> # Cargar paquete "car"
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> x <- rnorm(100)
+> y <- rnorm(100)
+> 
+> # Realizar test de Levene
+> leveneTest(x, y)
+Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(>F)
+group 99     NaN    NaN
+       0               
+Warning message:
+In leveneTest.default(x, y) : y coerced to factor.
+> # Cargar paquete "car"
+> library(car)
+> 
+> # Generar datos de ejemplo
+> set.seed(123) # Establecer semilla para reproducibilidad
+> x <- rnorm(100)
+> y <- rnorm(100)
+> 
+> # Realizar test de Levene
+> leveneTest(x, y, center="median")
+Levene's Test for Homogeneity of Variance (center = "median")
+      Df F value Pr(>F)
+group 99     NaN    NaN
+       0               
+Warning message:
+In leveneTest.default(x, y, center = "median") : y coerced to factor.
+> # Generar datos de ejemplo
+> x <- c(1, 2, 3, 4, 5)
+> y <- c(6, 7, 8, 9, 10)
+> 
+> # Calcular coeficiente de correlación
+> cor(x, y)
+[1] 1
+> 
+> # Generar datos de ejemplo
+> x <- c(1, 2, 10, 4, 0)
+> y <- c(6, 7, 8, 9, 10)
+> 
+> # Calcular coeficiente de correlación
+> cor(x, y)
+[1] 0
+> 
+> # Generar datos de ejemplo
+> x <- c(1, 2, 10, 4, 6)
+> y <- c(6, 7, 8, 9, 10)
+> 
+> # Calcular coeficiente de correlación
+> cor(x, y)
+[1] 0.5303301
+> # Datos de ejemplo
+> X <- c(90, 95, 104, 111, 128, 134, 142, 145)
+> Y <- c(12.86, 12.83, 12.81, 12.8, 12.8, 12.81, 12.81, 12.8)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> 
+> # Graficar modelo de regresión lineal
+> plot(modelo, 2)
+> # Generar datos de ejemplo
+> x <- c(90, 95, 104, 111, 128, 134, 142, 145)
+> y <- c(12.86, 12.83, 12.81, 12.8, 12.8, 12.81, 12.81, 12.8)
+> 
+> # Calcular coeficiente de correlación
+> cor(x, y)
+[1] -0.703463
+> 
+> # Datos de ejemplo
+> X <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> Y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> 
+> # Graficar modelo de regresión lineal
+> plot(X, Y)
+> abline(modelo)
+> # Datos de ejemplo
+> X <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> Y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> 
+> # Graficar modelo de regresión lineal
+> plot(X, Y)
+> # Datos de ejemplo
+> X <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> Y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> 
+> # Graficar modelo de regresión lineal
+> plot(X, Y)
+> abline(modelo)
+> # Datos de ejemplo
+> X <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> Y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> 
+> # Graficar modelo de regresión lineal
+> plot(X, Y)
+> # Datos de ejemplo
+> x <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(y ~ x)
+> 
+> # Graficar modelo de regresión lineal y normal Q-Q
+> par(mfrow=c(1,2)) # Dividir la ventana gráfica en 2 columnas
+> plot(modelo, 1) # Gráfica de dispersión
+> plot(modelo, 2) # Normal Q-Q
+> x <- c(90, 95, 104, 111, 128, 134, 142, 145)
+> y <- c(12.86, 12.83, 12.81, 12.8, 12.8, 12.81, 12.81, 12.8)
+> modelo <- lm(y ~ x)
+> 
+> # Graficar modelo de regresión lineal y normal Q-Q
+> par(mfrow=c(1,2)) # Dividir la ventana gráfica en 2 columnas
+> plot(modelo, 1) # Gráfica de dispersión
+> plot(modelo, 2) # Normal Q-Q
+> # Datos de ejemplo
+> x <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(y ~ x)
+> 
+> # Graficar modelo de regresión lineal y normal Q-Q
+> par(mfrow=c(1,2)) # Dividir la ventana gráfica en 2 columnas
+> plot(modelo, 1) # Gráfica de dispersión
+> plot(modelo, 2) # Normal Q-Q
+> 
+> # Generar datos de ejemplo
+> x <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> y <- c(3.56, 3.56, 3.57, 3.57, 3.58, 3.58, 3.59, 3.59)
+> 
+> # Calcular coeficiente de correlación
+> cor(x, y)
+[1] 0.9719235
+> 
+> # Datos de ejemplo
+> X <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> Y <- c(3.95, 3.93, 3.91, 3.91, 3.92, 3.94, 3.94, 3.94)
+> 
+> # Ajustar modelo de regresión lineal
+> modelo <- lm(Y ~ X)
+> # Graficar modelo de regresión lineal y normal Q-Q
+> par(mfrow=c(1,2)) # Dividir la ventana gráfica en 2 columnas
+> plot(modelo, 1) # Gráfica de dispersión
+> plot(modelo, 2)
+> # Nuevos valores de X e Y
+> x <- c(1.4, 1.59, 1.91, 2.14, 2.28, 2.48, 2.65, 2.82)
+> y <- c(3.95, 3.93, 3.91, 3.91, 3.92, 3.94, 3.94, 3.94)
+> 
+> # Calcular coeficiente de correlación
+> cor(x, y)
+[1] 0.06976638
+> 
+> 
